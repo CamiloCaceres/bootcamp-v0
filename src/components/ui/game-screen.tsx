@@ -15,6 +15,7 @@ export default function Component() {
   const [guess, setGuess] = useState<string>('')
   const [guesses, setGuesses] = useState<Guess[]>([])
   const [secretNumber, setSecretNumber] = useState<string>(() => generateSecretNumber())
+  const [showSecret, setShowSecret] = useState(false)
 
   // Add these new functions
   function generateSecretNumber(): string {
@@ -108,6 +109,19 @@ export default function Component() {
 
 
       <div className="w-full max-w-md bg-black bg-opacity-50 p-8 rounded-lg backdrop-blur-sm border border-cyan-400 shadow-lg shadow-cyan-400/50">
+        {showSecret && (
+          <div className="text-center mb-4 text-cyan-400">
+            Secret: {secretNumber}
+          </div>
+        )}
+        
+        <button
+          onClick={() => setShowSecret(!showSecret)}
+          className="w-full mb-4 py-2 px-4 text-sm bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-md border border-red-500/50"
+        >
+          {showSecret ? 'Hide Secret' : 'Show Secret'}
+        </button>
+
         <div className="mb-6">
           <Input
             type="text"
