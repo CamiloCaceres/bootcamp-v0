@@ -1,22 +1,37 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + IA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta aplicación fue generada utilizando V0, Claude Sonnet a través de Cursor, y está construida con React, Tailwind CSS y shadcn/ui.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto forma parte de la Sesión 5 del Bootcamp de Inteligencia Artificial, demostrando la integración de herramientas modernas de desarrollo y IA.
 
-## Expanding the ESLint configuration
+## Stack Tecnológico
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React** - Biblioteca para construir interfaces de usuario
+- **TypeScript** - Superset tipado de JavaScript
+- **Vite** - Herramienta de construcción ultrarrápida
+- **Tailwind CSS** - Framework de CSS utilitario
+- **shadcn/ui** - Componentes de UI reutilizables
+- **V0** - Herramienta de generación de código con IA
 
-- Configure the top-level `parserOptions` property like this:
+## Características
+
+- Hot Module Replacement (HMR)
+- Configuración de ESLint incluida
+- Soporte completo de TypeScript
+- Componentes estilizados con Tailwind CSS
+- UI moderna con shadcn/ui
+
+## Configuración de ESLint
+
+Para aplicaciones en producción, se recomienda habilitar las reglas de tipo:
+
+1. Configura las `parserOptions` así:
 
 ```js
 export default tseslint.config({
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -25,26 +40,31 @@ export default tseslint.config({
 })
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Actualiza la configuración de ESLint para React:
 
 ```js
 // eslint.config.js
 import react from 'eslint-plugin-react'
 
 export default tseslint.config({
-  // Set the react version
   settings: { react: { version: '18.3' } },
   plugins: {
-    // Add the react plugin
     react,
   },
   rules: {
-    // other rules...
-    // Enable its recommended rules
     ...react.configs.recommended.rules,
     ...react.configs['jsx-runtime'].rules,
   },
 })
 ```
+
+## Desarrollo Local
+
+1. Clona el repositorio
+2. Instala las dependencias: `npm install`
+3. Inicia el servidor de desarrollo: `npm run dev`
+
+## Plugins Oficiales
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) - Usa Babel
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) - Usa SWC
