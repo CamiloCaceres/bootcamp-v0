@@ -87,14 +87,25 @@ export default function Component() {
     }
   }
 
+  const handleNewGame = () => {
+    setSecretNumber(generateSecretNumber())
+    setGuesses([])
+    setGuess('')
+    toast({
+      title: "🎮 New Game Started",
+      description: "Try to guess the new number!",
+    })
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-indigo-900 to-pink-800 text-white p-8 flex flex-col items-center justify-center overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-indigo-900 to-pink-800 text-white p-8 flex flex-col items-center justify-center overflow-hidden ">
       {/* Retro sun */}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[200%] aspect-square rounded-[100%] bg-gradient-to-t from-yellow-500 via-orange-500 to-transparent opacity-20"></div>
       
       <h1 className="text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400 tracking-wider">
         BULLS & COWS
       </h1>
+
 
       <div className="w-full max-w-md bg-black bg-opacity-50 p-8 rounded-lg backdrop-blur-sm border border-cyan-400 shadow-lg shadow-cyan-400/50">
         <div className="mb-6">
@@ -111,6 +122,13 @@ export default function Component() {
             className="w-full mt-2 bg-gradient-to-r from-cyan-400 to-pink-400 text-black font-bold hover:from-cyan-500 hover:to-pink-500"
           >
             GUESS
+          </Button>
+          <Button
+            className="w-full mt-2 bg-gradient-to-r from-cyan-400 to-pink-400 text-black font-bold hover:from-cyan-500 hover:to-pink-500"
+          onClick={handleNewGame}
+          variant="outline"
+        >
+            New Game
           </Button>
         </div>
 
